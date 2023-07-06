@@ -4,7 +4,7 @@ trigger:
       - main  # branch name
 
 pool:
-  name: 'Default'
+  name: Default
 
 steps:
   - task: UsePythonVersion@0
