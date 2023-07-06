@@ -13,5 +13,6 @@ steps:
       addToPath: true
 
   - script: |
+      pip3 install -r requirements.txt
       python3 jokes.py
     displayName: 'Run Flask app'
