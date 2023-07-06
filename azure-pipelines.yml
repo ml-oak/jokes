@@ -13,11 +13,5 @@ steps:
       addToPath: true
 
   - script: |
-      python -m venv myenv
-      source myenv/bin/activate
-      pip install -r requirements.txt
-    displayName: 'Set up Python environment'
-
-  - script: |
       python3 jokes.py
     displayName: 'Run Flask app'
