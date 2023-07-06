@@ -4,7 +4,7 @@ trigger:
       - main  # branch name
 
 pool:
-  vmImage: 'ubuntu-latest'
+  name: 'Mitchells-MacBook-Pro'
 
 steps:
   - task: UsePythonVersion@0
