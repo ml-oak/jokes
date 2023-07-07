@@ -1,0 +1,18 @@
+trigger:
+  branches:
+    include:
+      - staging  # branch name
+
+pool:
+  name: Default
+
+steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.x'  # Python version
+      addToPath: true
+
+  - script: |
+      pip3 install -r requirements.txt
+      python3 jokes.py
+    displayName: 'Run Flask app'
