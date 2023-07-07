@@ -32,10 +32,12 @@ git clone https://github.com/ml-oak/ml-oak.git
 
 cd ml-oak/
 
-#### 4. Run the following command to load the Docker image from the tar file:
+#### 4. Run the following command to build the image:
 
-docker load -i jokes-app.tar
+docker build -t jokes . 
 
-This command loads the Docker image from the jokes-app.tar file.
-Once the image is loaded, you can use it to run containers on the target machine using the _docker run_ command
+This command build the image using the dockerfile in the repo.
+Once the image is built, you can use it to run containers on the target machine using the _docker run_ command.
+
+docker run -p 5000:5000 jokes
 
