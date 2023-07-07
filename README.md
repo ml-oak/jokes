@@ -1,52 +1,41 @@
-# Jokes App Deployment Using Azure DevOps Pipeline
+# Jokes App Local Deployment
 
-This repository contains a Flask app and an Azure DevOps pipeline configuration to automate the deployment process. Follow the instructions below to run the pipeline and deploy the Flask app using Azure DevOps.
+This repository contains a Flask app and an Azure DevOps pipeline configuration to automate the deployment process. Follow the instructions below to run the Flask app locally.
 
 ## Prerequisites
+The app can be deployed using a docker image or by running the python script.
+- Docker
+- Python 3.x 
 
-- Azure DevOps account
-- Basic knowledge of Azure DevOps Pipelines
-- Azure DevOps project created with appropriate permissions
+### Getting Started with Python
 
-## Getting Started
+#### 1. Clone this repository to your local machine:
 
-### 1. Clone this repository to your local machine:
+git clone https://github.com/ml-oak/ml-oak.git
 
-git clone https://github.com/your-username/flask-app-azure-pipeline.git
+#### 2. Navigate to the cloned repository:
 
-### 2. Navigate to the cloned repository:
+cd ml-oak/
 
-cd flask-app-azure-pipeline
+#### 4. Install the required dependencies using pip:
 
-### 3. Create a virtual environment and activate it (optional but recommended):
-python -m venv env
-source env/bin/activate  # For macOS/Linux
-env\Scripts\activate  # For Windows
+pip3 install -r requirements.txt
+python3 jokes.py
 
-### 4. Install the required dependencies using pip:
+### Docker
 
-pip install -r requirements.txt
+#### 1. Clone this repository to your local machine:
 
-### 5. Configure Azure DevOps Pipeline:
+git clone https://github.com/ml-oak/ml-oak.git
 
-a. Log in to your Azure DevOps account.
-b. Create a new project or select an existing project.
-c. Navigate to the Pipelines section and create a new pipeline.
-d. Select your repository as the source and choose the appropriate pipeline configuration file (e.g., azure-pipeline.yml).
-e. Modify the pipeline configuration to suit your needs, such as specifying the appropriate trigger, agent pool, and deployment targets.
+#### 2. Navigate to the cloned repository:
 
-### 6. Commit and push your changes to trigger the pipeline:
+cd ml-oak/
 
-git add .
-git commit -m "Add Flask app and pipeline configuration"
-git push
+#### 4. Run the following command to load the Docker image from the tar file:
 
-### 7. Monitor the pipeline execution in Azure DevOps:
+docker load -i jokes-app.tar
 
-a. Navigate to your project's Pipelines section.
-b. Select your pipeline and view the pipeline run details.
-c. Monitor the pipeline's progress, logs, and any potential errors.
-
-Once the pipeline completes successfully, your Flask app will be deployed to the local environment. You can access the app using the local endpoint.
-
+This command loads the Docker image from the jokes-app.tar file.
+Once the image is loaded, you can use it to run containers on the target machine using the _docker run_ command
 
